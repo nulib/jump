@@ -1,0 +1,9 @@
+RewriteEngine on
+
+RewriteCond %{REQUEST_URI} !^/$
+RewriteCond %{REQUEST_URI} !^/index.cgi$
+#RewriteCond %{REQUEST_URI} !^/index.html$
+RewriteCond %{REQUEST_URI} !^/c-s-s/.+$
+RewriteCond %{REQUEST_URI} !^/j-s/.+$
+RewriteCond %{REQUEST_URI} !^/jump.cgi$
+RewriteRule ^(.*)$ http://hostname.edu/jump.cgi?s=$1 [R=302,L,NS]
